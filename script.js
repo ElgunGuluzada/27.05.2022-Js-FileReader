@@ -8,8 +8,12 @@ let logIn = document.getElementById("log-in")
 let name = document.getElementById("name")
 let nameUpdate = document.getElementById("name-update")
 let surname = document.getElementById("surname")
+let surnameUpdate = document.getElementById("surname-update")
 let username = document.getElementById("username")
+let usernameUpdate = document.getElementById("username-update")
 let textArea = document.getElementById("textArea")
+let textAreaUpdate = document.getElementById("textArea-update")
+
 let iconUser = document.getElementById("icon-user")
 let submit = document.getElementById("submit")
 
@@ -22,12 +26,24 @@ submit.addEventListener("click", function (ev) {
     surname.value = InputSurname.value
     username.value = InputUsername.value
     textArea.value = InputTextArea.value
+    localStorage.setItem("Name", InputName.value)
+    localStorage.setItem("Surname", surname.value)
+    localStorage.setItem("Username", username.value)
+    localStorage.setItem("Description", textArea.value)
 })
 
 
-
 nameUpdate.onclick = function () {
-    localStorage.setItem(name, name.value)
+    localStorage.setItem("Name", name.value)
+}
+surnameUpdate.onclick = function () {
+    localStorage.setItem("Surname", surname.value)
+}
+usernameUpdate.onclick = function () {
+    localStorage.setItem("Username", username.value)
+}
+textAreaUpdate.onclick = function () {
+    localStorage.setItem("Description", textArea.value)
 }
 
 
